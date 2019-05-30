@@ -11,5 +11,5 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir /dsvw
 WORKDIR /dsvw
 ADD . /dsvw/
-CMD [ "python", "dsvw.py", "runserver", "0.0.0.0:80" ]
-EXPOSE 80
+CMD [ "python", "dsvw.py", "runserver", "0.0.0.0:1234" ]
+EXPOSE 1234
