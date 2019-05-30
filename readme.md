@@ -34,6 +34,11 @@ docker-compose up --build
 ## Important
 You have to change the IP Adress in the **nginx.conf** file to the IP Adress of your Dokerhost. Otherwise the reverse proxy and the WAF will not work.
 
+```
+location /dsvw {
+	proxy_pass http://192.168.99.100:1234/;
+```
+
 
 ## WAF
 A [Web Application Firewall (WAF)](https://www.owasp.org/index.php/Web_Application_Firewall) is a purpose-built firewall designed to protect against attacks common to web apps. One of the most widely used WAF’s is [ModSecurity](https://modsecurity.org/). Originally, it was written as a module for the Apache webserver, but it has since been ported to NGINX and IIS. ModSecurity protects against attacks by looking for:
@@ -87,7 +92,7 @@ SecDefaultAction "phase:1,deny,log"
 
 
 ## Links
-https://github.com/theonemule/docker-waf
-https://github.com/stamparm/DSVW
-https://geekflare.com/modsecurity-owasp-core-rule-set-nginx/
-https://github.com/SpiderLabs/owasp-modsecurity-crs/zipball/master
+* https://github.com/theonemule/docker-waf
+* https://github.com/stamparm/DSVW
+* https://geekflare.com/modsecurity-owasp-core-rule-set-nginx/
+* https://github.com/SpiderLabs/owasp-modsecurity-crs/zipball/master
